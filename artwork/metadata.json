@@ -1,0 +1,122 @@
+[
+  {
+    "file": "/tmp/karen-flower-assets/chrysanthemum.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/dahlia.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/forgetmenot.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/gerbera.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/hydrangea.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/jasmine.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/lily.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/magnolia.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/rose.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  },
+  {
+    "file": "/tmp/karen-flower-assets/sunflower.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ]
+  }
+]

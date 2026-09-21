@@ -1,19 +1,22 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Un jardín para ti · Amarillo a rosa</title>
-<meta name="description" content="Un pequeño jardín de flores amarillas que se transforma suavemente en rosado, para ti.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%2309100d'/%3E%3Cg fill='%23f6cc56'%3E%3Cellipse cx='20' cy='13' rx='5' ry='9'/%3E%3Cellipse cx='13' cy='22' rx='9' ry='5'/%3E%3Cellipse cx='27' cy='22' rx='9' ry='5'/%3E%3Cellipse cx='20' cy='28' rx='5' ry='8'/%3E%3C/g%3E%3Ccircle cx='20' cy='21' r='5' fill='%23e994b9'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f9edf0"><meta name="description" content="Un jardín de flores y palabras bonitas, solo para Karen."><meta name="robots" content="noindex,nofollow">
+<title>Karen, esto es para ti ♡</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23f9edf0'/%3E%3Ctext x='20' y='29' font-size='30' text-anchor='middle' fill='%23af6079'%3E%E2%99%A1%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
 </head>
 <body>
-<header><a class="brand" href="./" aria-label="Un jardín para ti, inicio"><span class="flower-mark" aria-hidden="true">✳</span> UN JARDÍN PARA TI</a><span class="date">21 DE SEPTIEMBRE</span></header>
+<header class="topbar"><span>UN JARDÍN PARA TI</span><span class="small-heart" aria-hidden="true">♡</span><button id="music-toggle" class="music-toggle" type="button" aria-pressed="false">♫ Activar música</button></header>
+<audio id="music" src="assets/yellow.mp3" preload="metadata" loop></audio>
 <main>
-<div class="intro"><p class="eyebrow">UN PEQUEÑO GESTO QUE FLORECE</p><h1>Para ti, <em>en todos los colores.</em></h1><p class="dedication">Hay cosas bonitas que cambian. El cariño se queda.</p></div>
-<div class="garden" id="garden"><canvas id="flowers" role="img" aria-label="Un jardín de flores amarillas cuyos pétalos se transforman gradualmente en rosados"></canvas><p class="loading" id="loading">Tu jardín está floreciendo…</p><div class="vignette"></div></div>
-<section class="controls" aria-label="Transformación de las flores"><div class="range-labels"><span><i class="yellow"></i>Amarillo</span><span class="hint" id="hint">Deja que florezca</span><span>Rosado<i class="pink"></i></span></div><input id="color" type="range" min="0" max="100" value="0" aria-label="Transformación de amarillo a rosado" aria-valuetext="Flores amarillas"><div class="actions"><button id="play" type="button" aria-label="Pausar transformación"><span id="play-icon" aria-hidden="true">Ⅱ</span><span id="play-label">Pausar</span></button><button id="restart" type="button"><span aria-hidden="true">↺</span> Volver a florecer</button></div></section>
+<section id="video-scene" class="scene video-scene" hidden aria-labelledby="video-title"><p class="eyebrow" id="video-title" tabindex="-1">PRIMERO, UNA COSITA PARA TI…</p><div class="video-wrap"><video id="intro-video" controls playsinline muted preload="metadata" src="assets/para-karen.mp4" aria-label="Video de un lémur abrazando un ramo rosado"></video></div><p id="video-error" class="status" hidden>No pudimos reproducir el video. Puedes intentarlo otra vez o seguir a las flores.</p><button id="to-flowers" class="text-button" type="button">Ir a las flores <span aria-hidden="true">↗</span></button></section>
+<section id="animation-scene" class="scene animation-scene" aria-labelledby="animation-title"><div class="animation-heading"><p class="eyebrow">PARA MI PEQUEÑA LULU</p><h2 id="animation-title" tabindex="-1">Karen, este jardín es para ti.</h2><p id="animation-caption">Un poquito de amarillo, un poquito de amor.</p></div><canvas id="flower-canvas" role="img" aria-label="Flores amarillas se transforman en rosadas y forman la frase Karen, te amo mucho"></canvas><span class="sr-only" id="animation-description" aria-live="polite"></span><div class="animation-actions"><button id="pause-animation" class="text-button" type="button">Pausar</button><button id="skip-animation" class="text-button" type="button">Ver tu video ↗</button></div></section>
+<section id="garden-scene" class="scene garden-scene" hidden aria-labelledby="garden-title"><p class="eyebrow">DIEZ FLORES, TODO MI CARIÑO</p><h2 id="garden-title" tabindex="-1">Cada flor, <em>algo que siento.</em></h2><p class="garden-help">Toca cada flor. Lee lo que guardé para ti y déjala volar.</p><div class="flower-grid" id="flower-grid"></div><div class="garden-bottom"><p id="progress" role="status">0 de 10 mensajes descubiertos</p><p class="last-hint" id="last-hint">Una sorpresa te espera al final.</p></div></section>
+<section id="final-scene" class="scene final-scene" hidden aria-labelledby="final-title"><div id="final-bouquet" class="final-bouquet" aria-hidden="true"></div><p class="eyebrow">Y ESTO TODAVÍA NO TERMINA…</p><h2 id="final-title" tabindex="-1">Hoy en la tarde te veo, <em>mi princesa.</em></h2><p class="final-message">Sí, te tengo <strong>dos regalos</strong> el día de hoy.<br><span class="final-love">Te amo mucho y espero<br>que tengas un lindo día.</span></p><span class="final-heart" aria-hidden="true">♡</span><div class="final-actions"><button id="back-garden" class="text-button" type="button">Volver a leer mis flores</button><button id="replay" class="text-button" type="button">Ver todo otra vez</button></div></section>
+<p id="asset-error" class="asset-error" role="status" hidden>Algunas flores no pudieron cargar. <button type="button" id="retry-assets">Intentar de nuevo</button></p>
 </main>
-<footer>Unas flores. Una sonrisa. <span>Y un poquito de magia.</span><span class="footer-flower" aria-hidden="true">✳</span></footer>
-<script src="app.js"></script>
+<footer><span>HECHO DE FLORES Y DE TODO LO QUE SIENTO POR TI</span><span aria-hidden="true">♡</span></footer>
+<dialog id="message-dialog" aria-labelledby="message-name" aria-describedby="message-text"><button class="close-dialog" id="close-message" type="button" aria-label="Cerrar mensaje">×</button><img id="message-flower" alt=""><p class="eyebrow" id="message-name"></p><p class="message-text" id="message-text"></p><button class="primary" id="keep-message" type="button">Guardar el mensaje y dejarla volar ♡</button></dialog>
 </body></html>
