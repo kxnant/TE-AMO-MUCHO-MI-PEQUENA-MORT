@@ -21,7 +21,7 @@ html = html.replace('src="assets/yellow.mp3"', `src="${data('yellow.mp3')}"`);
 html = html.replace('src="assets/para-karen.mp4"', `src="${data('para-karen.mp4')}"`);
 
 // Inline css + js
-html = html.replace('<link rel="stylesheet" href="style.css"><script src="app.js" defer></script>', `<style>${css}</style>`);
+html = html.replace(/<link rel="stylesheet" href="style\.css[^"]*"><script src="app\.js[^"]*" defer><\/script>/, `<style>${css}</style>`);
 html = html.replace('</body></html>', `<script>${js}</script></body></html>`);
 
 const out = new URL('./', import.meta.url).pathname + 'TE AMO MUCHO MI PEQUEÑA Mort.html';
